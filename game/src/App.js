@@ -47,12 +47,15 @@ function App() {
             </form>
           </section>
         </div>
-        <button className="btn" onClick={handleClick}>Start Game</button>
         {
-          !state.isFinish ? (
+          !state.state.isFinish &&  <button className={`btn ${hide}`} onClick={handleClick}>PLAY</button>
+        }
+       
+        {
+          !state.state.isFinish ? (
             <div>
               {
-                state.state.indexes.length && state.state.indexes.map(el => <img style={{ width: '100px' }} src={slots[el]} />)
+                state.state.indexes.length ? state.state.indexes.map((el, i)=> <img key={i} style={{ width: '100px' }} src={slots[el]} alt="slots"/>): ''
               }
             </div>
           ) : <h1> Game over</h1>

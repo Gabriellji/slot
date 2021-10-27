@@ -55,12 +55,14 @@ form .hide {
   align-items: center;
 }
 
+
 .input {
   margin: 30px;
   height: 20px;
 }
 
 .btn {
+  display: none;
   background-color: tomato;
   font-size: 1em;
   text-transform: uppercase;
@@ -72,6 +74,10 @@ form .hide {
   cursor: pointer;
   opacity: 0.8;
   width: 20%;
+}
+
+.btn.none {
+  display: unset;
 }
 
 @keyframes App-logo-spin {

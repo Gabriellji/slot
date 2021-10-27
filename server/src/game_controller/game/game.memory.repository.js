@@ -16,6 +16,7 @@ const createGame = game => {
 const updateCredits = (ip, dataToUpdate) => {
   const game = getGameByIp(ip);
   game.credits = dataToUpdate.credits
+  game.indexes = dataToUpdate.indexes;
   return game;
 }
 

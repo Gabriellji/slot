@@ -27,17 +27,17 @@ const start = (ip, credits, data) => {
             } else {
                 console.log('EEELSE JUST INCREASE')
                 data.credits = gameService.increase(ip, 20);
-                return;
+                return random;
             }
         } else if (credits < 40) {
             console.log('IF CRED less 40 INCREASE + 20')
             data.credits = gameService.increase(ip, 20);
-            return;
+            return random;
         }
     } else {
         console.log('LOOOOSERRRR')
         data.credits = gameService.decrease(ip);
-        return;
+        return random;
     }
 }
 
@@ -64,7 +64,8 @@ router.route('/').post((req, res) => {
             {
                 username,
                 ip,
-                credits: CREDITS
+                credits: CREDITS,
+                indexes: []
             }
         );
         return res.status(201).json(game);
@@ -84,7 +85,9 @@ router.route('/:ip').put((req, res) => {
             return res.status(404).send('Not enough credits!');;
         }
 
-        start(ip.ip, game.credits, game);
+        const indexes = start(ip.ip, game.credits, game);
+
+        game.indexes = indexes;
 
         const updatedGame = gameService.update(ip.ip, game);
 

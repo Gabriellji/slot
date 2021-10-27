@@ -27,6 +27,52 @@
 .App-link {
   color: #61dafb;
 }
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 50px;
+  padding: 25px;
+  box-shadow: 0.2em 0.2em 0 0 tomato, inset 0.2em 0.2em 0 0 #333;
+}
+
+form .hide {
+  display: none ;
+}
+
+.div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  margin: 30px;
+  height: 20px;
+}
+
+.btn {
+  background-color: tomato;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0.25em 1em;
+  border: 2px solid tomato;
+  margin-top: 10px;
+  outline: none;
+  cursor: pointer;
+  opacity: 0.8;
+  width: 20%;
+}
 
 @keyframes App-logo-spin {
   from {
